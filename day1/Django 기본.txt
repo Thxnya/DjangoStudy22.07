@@ -1,0 +1,70 @@
+- Django를 구동할 가상환경 만들기
+
+- 아나콘다 가상환경 목록 보기
+	- conda env list
+	
+- django 가상환경 만들기
+	- conda create --name django
+	
+- 생성한 django 가상환경으로 활성화하기
+	- conda activate django
+
+- 가상환경에서 빠져나오기
+	- conda deactivate
+	
+----------------------------------------------------
+- 가상환경에서 django 설치
+	- conda install -c conda-forge django==4.0.1
+	
+- django 버전 확인
+	- django-admin --version
+	
+- 설치 확인
+	- conda list
+	- pip list
+	
+- 사용할 라이브러리 설치(순서대로)
+	- 주피터노트북 설치 : pip install jupyter notebook
+	- 가상환경에 커널 연결하기 : python -m ipykernel install --user --name django --display-name django_kernel
+	- 기본 설치 라이브러리(1) : pip install ipython jupyter matplotlib pandas sklearn xlrd seaborn
+	- 기본 설치 라이브러리(2) : pip install openpyxl
+	
+-------------------------------------------------------------------------------------------------------
+- Django 프로젝트 만들기
+	- django-admin startproject config .
+
+- Django 프로젝트에 App 만들기
+	- django-admin startapp testapp
+
+- 아나콘다 프롬프트에서 웹서버 구동하기
+	- python manage.py runserver
+	- ip주소 복사해서 웹브라우저에 입력 후 실행
+	
+- config 폴더에서 다루는 파일
+	- settings.py 서버와 관련된 환경설정을 다루는 파일
+	- urls.py url을 받아서 처리하는 파일
+	
+- testapp 폴더에서 다루는 파일
+	- views.py
+	- models.py 데이터베이스 다루는 파일
+	- urls.py
+	
+----------------------------------------------------
+- config 폴더에서 setting.py 파일 설정하기
+
+- 서버주소 적기 : ALLOWED_HOSTS = ['127.0.0.1']
+
+- 앱 추가해주기 : INSTALLED_APPS = ['앱이름',
+
+- TEMPLATES에 추가 'DIRS': [BASE_DIR/'templates'],
+	- 프론트엔드 프로그램을 자동으로 연결시켜줌
+	
+- 언어랑 시간대 기준 맞춰주기
+	-LANGUAGE_CODE = 'ko-kr'
+	-TIME_ZONE = 'Asia/Seoul'
+
+-----------------------------------------------------
+- 프로그램 순서
+	- app -> views.py에 함수 만들기
+	- config -> urls.py에 url생성 및 함수 매핑
+	- 서버 실행 -> url 입력
