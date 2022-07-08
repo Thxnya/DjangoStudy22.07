@@ -1,1 +1,1 @@
-# StudDjangoy22.07
+# StudyDjango22.07
