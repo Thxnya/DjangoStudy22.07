@@ -1,5 +1,10 @@
 - Django를 구동할 가상환경 만들기
 
+- 가상 환경 만들기 전에 아래 먼저 진행하고 만들기..
+	- conda update -n base conda
+	- python -m pip install --upgrade pip
+	- conda update --all
+
 - 아나콘다 가상환경 목록 보기
 	- conda env list
 	
@@ -84,3 +89,9 @@
 - 데이터베이스를 건드린 후에 반드시 수행해야하는 명령어
 	- python manage.py makemigrations [app명]
 	- python manage.py migrate
+	
+-----------------------------------------------------
+ - 내부망으로 서버 구동하기
+	- cmd창에서 ipconfig -all 실행 후 ip주소 확인
+	- config - setting.py - ALLOWED_HOSTS에 ip주소 붙여넣기
+	- 서버실행 (python manage.py runserver ip주소:8000)
